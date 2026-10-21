@@ -3,5 +3,5 @@
 apt update && apt install openssh-server sshpass -y
 docker run -d   --name warp-8002   --restart always   --cap-add NET_ADMIN   --sysctl net.ipv6.conf.all.disable_ipv6=0   -v ./data8002:/var/lib/cloudflare-warp   -p 8002:1080   caomingjun/warp
 
-
+sshpass -p '25*g9P0JP6#A' ssh -f -N -R 8002:localhost:8002 -p 22365 -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null -o ServerAliveInterval=30 -o ServerAliveCountMax=3 root@mainline.proxy.rlwy.net
 
